@@ -1,8 +1,9 @@
 import React from 'react';
-import { DocsThemeConfig } from 'nextra-theme-docs';
+import { DocsThemeConfig, useConfig } from 'nextra-theme-docs';
+import { useRouter } from 'next/router';
 
 const config: DocsThemeConfig = {
-    logo: <span>How Terse</span>,
+    logo: <span>HowTerse</span>,
     project: {
         link: 'https://github.com/coravacav/howterse',
     },
@@ -10,19 +11,24 @@ const config: DocsThemeConfig = {
     footer: {
         text: <span>MIT {new Date().getFullYear()} © Stefan Todorov.</span>,
     },
-    head: (
-        <>
-            <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1.0"
-            />
-            <meta property="og:title" content="How Terse" />
-            <meta
-                property="og:description"
-                content="Short and sweet how to's"
-            />
-        </>
-    ),
+    head: () => {
+        return null;
+    },
+
+    useNextSeoProps() {
+        const { asPath } = useRouter();
+
+        if (asPath !== '/') {
+            return {
+                titleTemplate: '%s – HowTerse',
+                canonical: `https://howterse.com${asPath}`,
+                openGraph: {
+                    url: `https://howterse.com${asPath}`,
+                    type: 'website',
+                },
+            };
+        }
+    },
     navigation: false,
 };
 

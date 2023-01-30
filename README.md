@@ -1,4 +1,4 @@
-# How Terse
+# HowTerse
 
 Little site to keep my snippets, tips, tricks, etc.
 
