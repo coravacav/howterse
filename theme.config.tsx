@@ -10,6 +10,19 @@ const config: DocsThemeConfig = {
     footer: {
         text: <span>MIT {new Date().getFullYear()} © Stefan Todorov.</span>,
     },
+    head: (
+        <>
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+            />
+            <meta property="og:title" content="How Terse" />
+            <meta
+                property="og:description"
+                content="Short and sweet how to's"
+            />
+        </>
+    ),
     navigation: false,
 };
 
