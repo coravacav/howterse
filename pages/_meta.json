@@ -1,5 +1,7 @@
 {
     "index": "Introduction",
+    "code-snippets": "Code Snippets",
+    "config-snippets": "Config Snippets",
     "machine-setup": "Machine Setup",
     "about": {
         "title": "About",
